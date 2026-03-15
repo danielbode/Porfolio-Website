@@ -25,9 +25,6 @@ export const metadata: Metadata = {
     description: "Portfolio of Daniel Bode, iOS Developer based in Munich.",
     type: "website",
   },
-  icons: {
-    icon: "/favicon.svg",
-  },
 };
 
 /** Root layout — applies fonts, hydration suppression, and ThemeProvider. */
