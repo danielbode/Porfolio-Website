@@ -12,7 +12,7 @@ export const PrivacyContentDE = () => (
   <>
     <h1 className="text-3xl font-bold mb-2">Datenschutzerklärung</h1>
     <p className="text-sm text-gray-500 dark:text-gray-400 mb-6">
-      Stand: 13. März 2026
+      Stand: 15. März 2026
     </p>
 
     {/* ── Table of contents ─────────────────────────────────────────────── */}
@@ -25,6 +25,7 @@ export const PrivacyContentDE = () => (
           ["#rechtsgrundlagen", "Maßgebliche Rechtsgrundlagen"],
           ["#sicherheit", "Sicherheitsmaßnahmen"],
           ["#webhosting", "Bereitstellung des Onlineangebots und Webhosting"],
+          ["#speed-insights", "Vercel Speed Insights"],
           ["#kontakt", "Kontaktaufnahme"],
           ["#cookies", "Keine Verwendung von Cookies"],
           ["#localstorage", "Lokaler Speicher"],
@@ -187,6 +188,41 @@ export const PrivacyContentDE = () => (
       </p>
     </section>
 
+    {/* ── Vercel Speed Insights ─────────────────────────────────────────── */}
+    <section id="speed-insights" className="mb-10">
+      <h2 className="text-xl font-semibold mb-3">Vercel Speed Insights</h2>
+      <p className={`${bodyCls} mb-3`}>
+        Diese Website nutzt <strong>Vercel Speed Insights</strong>, einen Dienst der Vercel Inc.,
+        San Francisco, CA, USA, zur Messung von Webseitenperformance und Core Web Vitals. Dabei
+        werden technische Messdaten erhoben, insbesondere:
+      </p>
+      <ul className={`${listCls} mb-3`}>
+        <li>Performance-Kennzahlen (Core Web Vitals: LCP, INP, CLS, FCP, TTFB).</li>
+        <li>Aufgerufene URL bzw. Seite.</li>
+        <li>Browsertyp und Gerätetyp.</li>
+        <li>Verbindungsdaten (z. B. IP-Adresse, Land).</li>
+      </ul>
+      <p className={`${bodyCls} mb-3`}>
+        Die Daten werden an Server von Vercel in den USA übermittelt. Vercel ist unter dem EU-US
+        Data Privacy Framework (DPF) zertifiziert. Es werden keine Cookies gesetzt und keine
+        Nutzerprofile erstellt. Die Messdaten dienen ausschließlich der technischen Optimierung
+        dieser Website. Weitere Informationen finden Sie in der{" "}
+        <a
+          href="https://vercel.com/legal/privacy-policy"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={linkCls}
+        >
+          Datenschutzerklärung von Vercel
+        </a>.
+      </p>
+      <p className={bodyCls}>
+        <strong>Rechtsgrundlagen:</strong> Berechtigte Interessen (Art. 6 Abs. 1 S. 1 lit. f)
+        DSGVO) – berechtigtes Interesse an der technischen Qualitätssicherung und Optimierung
+        dieser Website.
+      </p>
+    </section>
+
     {/* ── Kontaktaufnahme ───────────────────────────────────────────────── */}
     <section id="kontakt" className="mb-10">
       <h2 className="text-xl font-semibold mb-3">Kontaktaufnahme</h2>
@@ -334,7 +370,7 @@ export const PrivacyContentEN = () => (
   <>
     <h1 className="text-3xl font-bold mb-2">Privacy Policy</h1>
     <p className="text-sm text-gray-500 dark:text-gray-400 mb-6">
-      As of: 13 March 2026
+      As of: 15 March 2026
     </p>
 
     {/* ── Table of contents ─────────────────────────────────────────────── */}
@@ -347,6 +383,7 @@ export const PrivacyContentEN = () => (
           ["#legal-bases", "Applicable Legal Bases"],
           ["#security", "Security Measures"],
           ["#hosting", "Provision of the Online Offering and Web Hosting"],
+          ["#speed-insights", "Vercel Speed Insights"],
           ["#contact", "Contact"],
           ["#cookies", "No Use of Cookies"],
           ["#localstorage", "Local Storage"],
@@ -497,6 +534,40 @@ export const PrivacyContentEN = () => (
       </p>
       <p className={bodyCls}>
         <strong>Legal bases:</strong> Legitimate interests (Art. 6(1)(f) GDPR).
+      </p>
+    </section>
+
+    {/* ── Vercel Speed Insights ──────────────────────────────────────────── */}
+    <section id="speed-insights" className="mb-10">
+      <h2 className="text-xl font-semibold mb-3">Vercel Speed Insights</h2>
+      <p className={`${bodyCls} mb-3`}>
+        This website uses <strong>Vercel Speed Insights</strong>, a service provided by Vercel
+        Inc., San Francisco, CA, USA, for measuring website performance and Core Web Vitals. The
+        following technical metrics data is collected:
+      </p>
+      <ul className={`${listCls} mb-3`}>
+        <li>Performance metrics (Core Web Vitals: LCP, INP, CLS, FCP, TTFB).</li>
+        <li>URL / page visited.</li>
+        <li>Browser type and device type.</li>
+        <li>Connection data (e.g. IP address, country).</li>
+      </ul>
+      <p className={`${bodyCls} mb-3`}>
+        Data is transmitted to Vercel&apos;s servers in the United States. Vercel is certified under
+        the EU-US Data Privacy Framework (DPF). No cookies are set and no user profiles are
+        created. The metrics data is used solely for the technical optimisation of this website.
+        Further information can be found in{" "}
+        <a
+          href="https://vercel.com/legal/privacy-policy"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={linkCls}
+        >
+          Vercel&apos;s Privacy Policy
+        </a>.
+      </p>
+      <p className={bodyCls}>
+        <strong>Legal bases:</strong> Legitimate interests (Art. 6(1)(f) GDPR) — legitimate
+        interest in the technical quality assurance and optimisation of this website.
       </p>
     </section>
 
