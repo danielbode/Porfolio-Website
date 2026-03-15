@@ -26,6 +26,7 @@ export const PrivacyContentDE = () => (
           ["#sicherheit", "Sicherheitsmaßnahmen"],
           ["#webhosting", "Bereitstellung des Onlineangebots und Webhosting"],
           ["#speed-insights", "Vercel Speed Insights"],
+          ["#analytics", "Vercel Web Analytics"],
           ["#kontakt", "Kontaktaufnahme"],
           ["#cookies", "Keine Verwendung von Cookies"],
           ["#localstorage", "Lokaler Speicher"],
@@ -223,6 +224,41 @@ export const PrivacyContentDE = () => (
       </p>
     </section>
 
+    {/* ── Vercel Web Analytics ──────────────────────────────────────────── */}
+    <section id="analytics" className="mb-10">
+      <h2 className="text-xl font-semibold mb-3">Vercel Web Analytics</h2>
+      <p className={`${bodyCls} mb-3`}>
+        Diese Website nutzt <strong>Vercel Web Analytics</strong>, einen Dienst der Vercel Inc.,
+        San Francisco, CA, USA, zur Auswertung des Nutzungsverhaltens auf dieser Website. Dabei
+        werden folgende Daten erhoben:
+      </p>
+      <ul className={`${listCls} mb-3`}>
+        <li>Aufgerufene Seiten (URL-Pfade).</li>
+        <li>Referrer (verweisende Website).</li>
+        <li>Land und Region des Besuchers (aus der IP-Adresse abgeleitet, nicht gespeichert).</li>
+        <li>Gerätetyp und Betriebssystem.</li>
+        <li>Browsertyp.</li>
+      </ul>
+      <p className={`${bodyCls} mb-3`}>
+        Die Erfassung erfolgt ohne Cookies und ohne die Erstellung von Nutzerprofilen. IP-Adressen
+        werden nicht dauerhaft gespeichert. Die Daten werden an Server von Vercel in den USA
+        übermittelt. Vercel ist unter dem EU-US Data Privacy Framework (DPF) zertifiziert. Weitere
+        Informationen finden Sie in der{" "}
+        <a
+          href="https://vercel.com/legal/privacy-policy"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={linkCls}
+        >
+          Datenschutzerklärung von Vercel
+        </a>.
+      </p>
+      <p className={bodyCls}>
+        <strong>Rechtsgrundlagen:</strong> Berechtigte Interessen (Art. 6 Abs. 1 S. 1 lit. f)
+        DSGVO) – berechtigtes Interesse an der Analyse und Verbesserung des Onlineangebots.
+      </p>
+    </section>
+
     {/* ── Kontaktaufnahme ───────────────────────────────────────────────── */}
     <section id="kontakt" className="mb-10">
       <h2 className="text-xl font-semibold mb-3">Kontaktaufnahme</h2>
@@ -384,6 +420,7 @@ export const PrivacyContentEN = () => (
           ["#security", "Security Measures"],
           ["#hosting", "Provision of the Online Offering and Web Hosting"],
           ["#speed-insights", "Vercel Speed Insights"],
+          ["#analytics", "Vercel Web Analytics"],
           ["#contact", "Contact"],
           ["#cookies", "No Use of Cookies"],
           ["#localstorage", "Local Storage"],
@@ -568,6 +605,40 @@ export const PrivacyContentEN = () => (
       <p className={bodyCls}>
         <strong>Legal bases:</strong> Legitimate interests (Art. 6(1)(f) GDPR) — legitimate
         interest in the technical quality assurance and optimisation of this website.
+      </p>
+    </section>
+
+    {/* ── Vercel Web Analytics ───────────────────────────────────────────── */}
+    <section id="analytics" className="mb-10">
+      <h2 className="text-xl font-semibold mb-3">Vercel Web Analytics</h2>
+      <p className={`${bodyCls} mb-3`}>
+        This website uses <strong>Vercel Web Analytics</strong>, a service provided by Vercel Inc.,
+        San Francisco, CA, USA, to analyse usage of this website. The following data is collected:
+      </p>
+      <ul className={`${listCls} mb-3`}>
+        <li>Pages visited (URL paths).</li>
+        <li>Referrer (referring website).</li>
+        <li>Country and region of the visitor (derived from IP address, not stored).</li>
+        <li>Device type and operating system.</li>
+        <li>Browser type.</li>
+      </ul>
+      <p className={`${bodyCls} mb-3`}>
+        Data is collected without cookies and without the creation of user profiles. IP addresses
+        are not stored permanently. Data is transmitted to Vercel&apos;s servers in the United
+        States. Vercel is certified under the EU-US Data Privacy Framework (DPF). Further
+        information can be found in{" "}
+        <a
+          href="https://vercel.com/legal/privacy-policy"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={linkCls}
+        >
+          Vercel&apos;s Privacy Policy
+        </a>.
+      </p>
+      <p className={bodyCls}>
+        <strong>Legal bases:</strong> Legitimate interests (Art. 6(1)(f) GDPR) — legitimate
+        interest in analysing and improving the online offering.
       </p>
     </section>
 
