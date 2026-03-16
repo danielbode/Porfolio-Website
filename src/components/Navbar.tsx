@@ -9,7 +9,7 @@ import NavMobileMenu from "@/components/NavMobileMenu";
 
 /** Primary navigation bar with language switcher, theme toggle, and scroll-aware URL updates. */
 const Navbar = () => {
-  const { theme, setTheme } = useTheme();
+  const { resolvedTheme, setTheme } = useTheme();
   const { language, setLanguage, t } = useLanguage();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -141,11 +141,11 @@ const Navbar = () => {
           {/* Theme toggle — only rendered on the client to avoid hydration mismatch */}
           {mounted && (
             <button
-              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+              onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
               className="p-2 rounded-md text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
               aria-label="Toggle theme"
             >
-              {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
+              {resolvedTheme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
             </button>
           )}
 
