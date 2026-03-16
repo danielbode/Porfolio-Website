@@ -83,7 +83,7 @@ export const translations = {
             "Developed the full-stack operator platform for SIEAERO — a drone-based overhead power line inspection system that captures RGB, infrared, UV, and 3D point-cloud data to feed an AI defect-detection pipeline.",
             "Built the complete data ingestion and results review workflow: operators upload drone data, trigger AI processing, then assess detected findings — adjusting severity ratings, removing false positives, and manually adding any missed defects.",
             "Implemented automated PDF report generation consolidating all verified findings, enabling field teams to perform targeted repairs instead of manually inspecting entire power line routes.",
-            "Integrated the AI processing service as a Docker container into the application stack and contributed to automated recognition of power line components (pylons, conductor cables).",
+            "Integrated the AI processing service as a Docker container into the application stack.",
           ],
           tech: ["Angular", "TypeScript", "Express.js", "Node.js", "PostgreSQL", "Docker", "Gitlab CI/CD"],
         },
@@ -101,7 +101,7 @@ export const translations = {
           description:
             "My personal developer portfolio — built with Next.js, React, and Tailwind CSS. Designed with a focus on clean UI, responsive layout, dark mode, and bilingual (EN/DE) support.",
           tech: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Claude Code"],
-          link: "https://danielbode.me",
+          github: "https://github.com/danielbode/Porfolio-Website",
           badge: "You're looking at it",
         },
         {
@@ -254,7 +254,7 @@ export const translations = {
             "Entwicklung der Full-Stack-Bedienoberfläche für SIEAERO – ein drohnenbasiertes Inspektionssystem für Hochspannungsleitungen, das RGB-, Infrarot-, UV- und 3D-Punktwolken-Daten erfasst und einer KI-Pipeline zur Fehlererkennung zuführt.",
             "Aufbau des vollständigen Datenerfassungs- und Auswertungsworkflows: Operatoren laden Drohnendaten hoch, starten die KI-Verarbeitung und bewerten erkannte Befunde – inklusive Schweregradeinstufung, Entfernung von Fehlalarmen und manueller Ergänzungen.",
             "Implementierung eines automatisierten PDF-Berichtsexports, der alle verifizierten Defekte bündelt – Wartungsteams können gezielt defekte Stellen reparieren, statt die gesamte Leitung manuell zu prüfen.",
-            "Integration des KI-Verarbeitungsdienstes als Docker-Container in den Applikations-Stack sowie Beiträge zur automatisierten Erkennung von Freileitungskomponenten (Masten, Leitungsseile).",
+            "Integration des KI-Verarbeitungsdienstes als Docker-Container in den Applikations-Stack.",
           ],
           tech: ["Angular", "TypeScript", "Express.js", "Node.js", "PostgreSQL", "Docker", "Gitlab CI/CD"],
         },
@@ -272,7 +272,7 @@ export const translations = {
           description:
             "Mein persönliches Entwickler-Portfolio – erstellt mit Next.js, React und Tailwind CSS. Gestaltet mit Fokus auf klares UI, responsives Layout, Dark Mode und zweisprachigem Support (DE/EN).",
           tech: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Claude Code"],
-          link: "https://danielbode.me",
+          github: "https://github.com/danielbode/Porfolio-Website",
           badge: "Sie sind gerade hier",
         },
         {
