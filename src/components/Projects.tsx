@@ -1,6 +1,6 @@
 "use client";
 
-import { Github, Play, ExternalLink } from "lucide-react";
+import { Github, Play } from "lucide-react";
 import { useLanguage } from "@/lib/LanguageContext";
 
 /** Projects section displaying a grid of project cards with tech tags and links. */
@@ -56,17 +56,6 @@ const Projects = () => {
 
               {/* Links */}
               <div className="flex gap-4 mt-auto">
-                {"link" in project && project.link && (
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 text-xs font-semibold text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
-                  >
-                    <ExternalLink size={14} />
-                    {t.projects.view_site}
-                  </a>
-                )}
                 {"video" in project && project.video && (
                   <a
                     href={project.video}
