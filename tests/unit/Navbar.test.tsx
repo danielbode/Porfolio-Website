@@ -6,14 +6,13 @@ import { render, screen, fireEvent } from "@testing-library/react";
 import Navbar from "@/components/Navbar";
 import { LanguageProvider } from "@/lib/LanguageContext";
 
-// next-themes requires a DOM and has internal state — mock it minimally
 jest.mock("next-themes", () => ({
-  useTheme: () => ({ theme: "light", setTheme: jest.fn() }),
+  useTheme: () => ({ resolvedTheme: "light", setTheme: jest.fn() }),
 }));
 
-function renderNavbar() {
+function renderNavbar(lang: "en" | "de" = "en") {
   return render(
-    <LanguageProvider>
+    <LanguageProvider initialLang={lang}>
       <Navbar />
     </LanguageProvider>
   );
@@ -25,9 +24,10 @@ describe("Navbar", () => {
     expect(screen.getByText("Daniel Bode")).toBeInTheDocument();
   });
 
-  it("renders the language toggle button", () => {
+  it("renders both language switcher buttons", () => {
     renderNavbar();
-    expect(screen.getByLabelText("Toggle language")).toBeInTheDocument();
+    expect(screen.getByLabelText("Switch to English")).toBeInTheDocument();
+    expect(screen.getByLabelText("Switch to German")).toBeInTheDocument();
   });
 
   it("renders the theme toggle button", () => {
@@ -45,10 +45,9 @@ describe("Navbar", () => {
     expect(screen.getByText("Contact")).toBeInTheDocument();
   });
 
-  it("switches to DE nav labels after toggling language", () => {
+  it("switches to DE nav labels after clicking DE button", () => {
     renderNavbar();
-    const toggle = screen.getByLabelText("Toggle language");
-    fireEvent.click(toggle);
+    fireEvent.click(screen.getByLabelText("Switch to German"));
     expect(screen.getByText("Über mich")).toBeInTheDocument();
     expect(screen.getByText("Kenntnisse")).toBeInTheDocument();
     expect(screen.getByText("Erfahrung")).toBeInTheDocument();
@@ -57,13 +56,14 @@ describe("Navbar", () => {
     expect(screen.getByText("Kontakt")).toBeInTheDocument();
   });
 
-  it("language button label flips after toggle (DE → shows EN, EN → shows DE)", () => {
+  it("renders DE nav labels when initialised in German", () => {
+    renderNavbar("de");
+    expect(screen.getByText("Über mich")).toBeInTheDocument();
+    expect(screen.getByText("Kontakt")).toBeInTheDocument();
+  });
+
+  it("renders the mobile menu toggle button", () => {
     renderNavbar();
-    const toggle = screen.getByLabelText("Toggle language");
-    // Initially in EN — button shows "DE" (to switch to DE)
-    expect(toggle).toHaveTextContent("DE");
-    fireEvent.click(toggle);
-    // Now in DE — button shows "EN" (to switch back)
-    expect(toggle).toHaveTextContent("EN");
+    expect(screen.getByLabelText("Toggle menu")).toBeInTheDocument();
   });
 });
