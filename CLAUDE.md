@@ -69,7 +69,7 @@ if (!el) return; // let the href navigate
 
 ### Legal pages
 
-Both language variants of each legal page (`/[lang]/imprint` + `/[lang]/impressum`, `/[lang]/datenschutz` + `/[lang]/privacy`) render the same client component (`ImprintPage` / `PrivacyPage` in `src/components/`). Content is chosen at render time via `language === "de"`. The pages contain `[PLACEHOLDER]` markers for address and email that must be filled in before going live.
+Both language variants of each legal page (`/[lang]/imprint` + `/[lang]/impressum`, `/[lang]/datenschutz` + `/[lang]/privacy`) render the same client component (`ImprintPage` / `PrivacyPage` in `src/components/`). Content is chosen at render time via `language === "de"`. `ImprintPage` also includes a Formspree-powered contact form.
 
 ### Testing
 
@@ -98,4 +98,3 @@ When adding a new translation key, always add it to **both** `en` and `de` in `t
 
 - Always optimise images with `next/image` — never use a raw `<img>` tag
 - Export a `metadata` object from every page for SEO
-- Use `pretty-code` (rehype-pretty-code) for syntax highlighting
