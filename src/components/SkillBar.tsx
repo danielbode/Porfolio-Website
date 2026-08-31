@@ -24,9 +24,9 @@ const SkillBar = ({ name, level, lang }: SkillBarProps) => (
       {([1, 2, 3, 4] as SkillLevel[]).map((seg) => (
         <div
           key={seg}
-          className={`h-1.5 flex-1 rounded-full transition-all duration-300 ${
+          className={`h-1.5 flex-1 rounded-full ${
             seg <= level
-              ? "bg-gradient-to-r from-indigo-500 to-cyan-500"
+              ? "bg-gray-800 dark:bg-gray-200"
               : "bg-gray-200 dark:bg-gray-800"
           }`}
         />
