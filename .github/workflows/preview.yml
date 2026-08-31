@@ -32,6 +32,23 @@ jobs:
           node-version-file: .nvmrc
           cache: npm
 
+      - name: TEMP diagnose token access
+        env:
+          TOKEN: ${{ secrets.VERCEL_TOKEN }}
+        run: |
+          echo "token length: ${#TOKEN}"
+          case "$TOKEN" in
+            vcp_*) echo "prefix: vcp_ (personal access token)" ;;
+            *) echo "prefix: NOT vcp_ — first 4 chars: $(printf '%s' "$TOKEN" | cut -c1-4)" ;;
+          esac
+          printf 'has whitespace: '
+          case "$TOKEN" in *[[:space:]]*) echo YES ;; *) echo no ;; esac
+          echo "--- GET /v9/projects/\$VERCEL_PROJECT_ID ---"
+          curl -s -o /tmp/proj.json -w 'HTTP %{http_code}\n' \
+            "https://api.vercel.com/v9/projects/${VERCEL_PROJECT_ID}?teamId=${VERCEL_ORG_ID}" \
+            -H "Authorization: Bearer $TOKEN"
+          head -c 400 /tmp/proj.json; echo
+
       - name: Install Vercel CLI
         run: npm install --global vercel@latest
       - name: Pull Vercel environment information
