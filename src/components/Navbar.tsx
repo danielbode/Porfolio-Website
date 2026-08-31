@@ -80,7 +80,7 @@ const Navbar = () => {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b ${
         scrolled
-          ? "bg-white/80 dark:bg-gray-950/80 backdrop-blur-md shadow-sm border-gray-200/50 dark:border-gray-800/50"
+          ? "bg-white/80 dark:bg-black/80 backdrop-blur-md border-gray-200/50 dark:border-gray-800/50"
           : "bg-transparent border-transparent"
       }`}
     >
@@ -89,7 +89,7 @@ const Navbar = () => {
         <a
           href={`/${language}`}
           onClick={handleLogoClick}
-          className="text-lg font-bold gradient-text select-none"
+          className="text-lg font-semibold text-gray-900 dark:text-white select-none"
         >
           Daniel Bode
         </a>
@@ -101,7 +101,7 @@ const Navbar = () => {
               <a
                 href={`/${language}/${sectionSlugs[language][link.id]}`}
                 onClick={(e) => handleNavClick(e, link.id)}
-                className="text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
+                className="text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
               >
                 {link.label}
               </a>
@@ -112,25 +112,24 @@ const Navbar = () => {
         {/* Controls */}
         <div className="flex items-center gap-2">
           {/* Language switcher */}
-          <div className="flex items-center text-xs font-semibold rounded-md border border-gray-300 dark:border-gray-700 overflow-hidden">
+          <div className="flex items-center text-xs font-medium rounded-full border border-gray-300 dark:border-gray-700 overflow-hidden">
             <button
               onClick={() => setLanguage("en")}
               className={`px-2.5 py-1 transition-colors ${
                 language === "en"
-                  ? "bg-indigo-600 text-white"
-                  : "text-gray-500 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400"
+                  ? "bg-gray-900 text-white dark:bg-white dark:text-gray-900"
+                  : "text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
               }`}
               aria-label="Switch to English"
             >
               EN
             </button>
-            <span className="w-px self-stretch bg-gray-300 dark:bg-gray-700" />
             <button
               onClick={() => setLanguage("de")}
               className={`px-2.5 py-1 transition-colors ${
                 language === "de"
-                  ? "bg-indigo-600 text-white"
-                  : "text-gray-500 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400"
+                  ? "bg-gray-900 text-white dark:bg-white dark:text-gray-900"
+                  : "text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
               }`}
               aria-label="Switch to German"
             >
@@ -142,7 +141,7 @@ const Navbar = () => {
           {mounted && (
             <button
               onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
-              className="p-2 rounded-md text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+              className="p-2 rounded-full text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
               aria-label="Toggle theme"
             >
               {resolvedTheme === "dark" ? <Sun size={18} /> : <Moon size={18} />}

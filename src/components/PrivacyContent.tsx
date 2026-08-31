@@ -1,4 +1,4 @@
-const linkCls = "text-indigo-600 dark:text-indigo-400 hover:underline";
+const linkCls = "text-blue-600 dark:text-blue-400 hover:underline";
 const bodyCls = "text-gray-700 dark:text-gray-300 leading-relaxed";
 const listCls = "list-disc list-inside text-gray-700 dark:text-gray-300 space-y-2 pl-2";
 const h3Cls = "text-base font-semibold mb-2 mt-4 text-gray-900 dark:text-white";

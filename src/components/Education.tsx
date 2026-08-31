@@ -11,25 +11,24 @@ const Education = () => {
     <section id="education" className="py-24 px-4">
       <div className="max-w-4xl mx-auto">
         <div className="mb-14 text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-3">{t.education.title}</h2>
-          <div className="w-16 h-1 bg-indigo-500 mx-auto rounded-full" />
+          <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight">{t.education.title}</h2>
         </div>
 
-        <div className="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-8 shadow-sm">
+        <div className="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-8">
           <div className="flex flex-col sm:flex-row sm:items-start gap-6">
             {/* Icon */}
-            <div className="shrink-0 w-14 h-14 rounded-xl bg-indigo-50 dark:bg-indigo-950/50 border border-indigo-200 dark:border-indigo-800 flex items-center justify-center">
-              <GraduationCap size={28} className="text-indigo-600 dark:text-indigo-400" />
+            <div className="shrink-0 w-14 h-14 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center">
+              <GraduationCap size={28} className="text-gray-500 dark:text-gray-400" />
             </div>
 
             {/* Content */}
             <div className="flex-1">
               <div className="flex flex-wrap items-start justify-between gap-3 mb-1">
                 <div>
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-white">
+                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
                     {t.education.degree}
                   </h3>
-                  <p className="text-indigo-600 dark:text-indigo-400 font-semibold text-sm mt-0.5">
+                  <p className="text-gray-500 dark:text-gray-400 font-medium text-sm mt-0.5">
                     {t.education.university}
                   </p>
                 </div>
@@ -39,14 +38,14 @@ const Education = () => {
                     {t.education.period}
                   </div>
                   <div className="flex items-center gap-1 justify-end">
-                    <Star size={12} className="text-amber-500" />
+                    <Star size={12} />
                     {t.education.grade}
                   </div>
                 </div>
               </div>
 
               <div className="mt-5">
-                <h4 className="text-xs font-semibold text-indigo-600 dark:text-indigo-400 uppercase tracking-wider mb-3">
+                <h4 className="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-3">
                   {t.education.highlights}
                 </h4>
                 <ul className="space-y-2">
@@ -55,7 +54,7 @@ const Education = () => {
                       key={i}
                       className="flex gap-2 text-sm text-gray-600 dark:text-gray-400 leading-relaxed"
                     >
-                      <span className="text-indigo-500 mt-0.5 shrink-0 leading-none">▸</span>
+                      <span className="mt-[0.55rem] w-1 h-1 rounded-full bg-gray-400 dark:bg-gray-500 shrink-0" />
                       {item}
                     </li>
                   ))}
@@ -67,7 +66,7 @@ const Education = () => {
                 {["Angular", "TypeScript", "Spring Boot", "Java", "Unity", "C#", "ARKit", "Swift"].map((t) => (
                   <span
                     key={t}
-                    className="px-2.5 py-0.5 text-xs font-medium rounded-full bg-indigo-50 dark:bg-indigo-950/50 text-indigo-700 dark:text-indigo-300 border border-indigo-200 dark:border-indigo-800"
+                    className="px-2.5 py-1 text-xs font-medium rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300"
                   >
                     {t}
                   </span>
