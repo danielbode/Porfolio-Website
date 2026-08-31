@@ -1,4 +1,5 @@
 import { test, expect, type Page } from "@playwright/test";
+import { waitForHydration } from "./helpers";
 
 /** Opens the mobile menu if the viewport collapsed the nav into a hamburger. */
 const revealNavLinks = async (page: Page) => {
@@ -11,6 +12,8 @@ const revealNavLinks = async (page: Page) => {
 test.describe("Navigation", () => {
   test.beforeEach(async ({ page }) => {
     await page.goto("/");
+    // revealNavLinks clicks the hamburger, which is inert until hydration.
+    await waitForHydration(page);
   });
 
   test("logo link points to the language root", async ({ page }) => {

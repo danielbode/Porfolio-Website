@@ -1,8 +1,11 @@
 import { test, expect } from "@playwright/test";
+import { waitForHydration } from "./helpers";
 
 test.describe("Language toggle (EN ↔ DE)", () => {
   test.beforeEach(async ({ page }) => {
     await page.goto("/");
+    // Every test here clicks a language button, which is inert until hydration.
+    await waitForHydration(page);
   });
 
   test("both language buttons are visible", async ({ page }) => {
