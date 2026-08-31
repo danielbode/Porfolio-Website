@@ -1,30 +1,34 @@
-import { test, expect } from "@playwright/test";
+import { test, expect, type Page } from "@playwright/test";
+import { waitForHydration } from "./helpers";
+
+/** Opens the mobile menu if the viewport collapsed the nav into a hamburger. */
+const revealNavLinks = async (page: Page) => {
+  const hamburger = page.getByLabel("Toggle menu");
+  if (await hamburger.isVisible()) {
+    await hamburger.click();
+  }
+};
 
 test.describe("Navigation", () => {
   test.beforeEach(async ({ page }) => {
     await page.goto("/");
+    // revealNavLinks clicks the hamburger, which is inert until hydration.
+    await waitForHydration(page);
   });
 
-  test("logo link has href pointing to root", async ({ page }) => {
-    const logoLink = page.locator('a[href="#"]').first();
-    await expect(logoLink).toBeVisible();
+  test("logo link points to the language root", async ({ page }) => {
+    await expect(page.locator('a[href="/en"]').first()).toBeVisible();
   });
 
-  // Check nav links exist in the DOM (desktop: visible in nav; mobile: inside hidden menu)
-  const sections: Array<{ id: string }> = [
-    { id: "about" },
-    { id: "skills" },
-    { id: "experience" },
-    { id: "projects" },
-    { id: "education" },
-    { id: "contact" },
-  ];
+  // Nav links use language-prefixed slugs (see src/lib/sectionSlugs.ts).
+  // On desktop they sit in the nav; on mobile they only exist once the menu is open.
+  const sections = ["about", "skills", "experience", "projects", "education", "contact"];
 
-  for (const { id } of sections) {
-    test(`nav contains a link to #${id}`, async ({ page }) => {
-      // The link exists somewhere in the nav (desktop visible or mobile hidden)
-      const link = page.locator(`a[href="#${id}"]`).first();
-      await expect(link).toHaveAttribute("href", `#${id}`);
+  for (const id of sections) {
+    test(`nav contains a link to /en/${id}`, async ({ page }) => {
+      await revealNavLinks(page);
+      // Both navs are in the DOM; :visible picks whichever one the viewport shows.
+      await expect(page.locator(`a[href="/en/${id}"]:visible`).first()).toBeVisible();
     });
   }
 
@@ -38,7 +42,7 @@ test.describe("Navigation", () => {
     }
   });
 
-  test("'View Projects' CTA points to #projects", async ({ page }) => {
+  test("'View Projects' CTA points to #projects", { tag: "@smoke" }, async ({ page }) => {
     await expect(
       page.getByRole("link", { name: /view projects/i })
     ).toHaveAttribute("href", "#projects");
