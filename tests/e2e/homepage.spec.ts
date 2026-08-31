@@ -5,7 +5,7 @@ test.describe("Homepage — layout and content", () => {
     await page.goto("/");
   });
 
-  test("page title is correct", async ({ page }) => {
+  test("page title is correct", { tag: "@smoke" }, async ({ page }) => {
     await expect(page).toHaveTitle(/Daniel Bode/);
   });
 
@@ -17,13 +17,13 @@ test.describe("Homepage — layout and content", () => {
     await expect(page.getByRole("heading", { level: 2 }).first()).toContainText("iOS Developer");
   });
 
-  test("private email is not present anywhere on the page", async ({ page }) => {
+  test("private email is not present anywhere on the page", { tag: "@smoke" }, async ({ page }) => {
     const content = await page.content();
     expect(content).not.toContain("t-online.de");
     expect(content).not.toContain("daniel-andreas.bode");
   });
 
-  test("all main sections are present", async ({ page }) => {
+  test("all main sections are present", { tag: "@smoke" }, async ({ page }) => {
     for (const id of ["about", "skills", "experience", "projects", "education", "contact"]) {
       await expect(page.locator(`#${id}`)).toBeVisible();
     }
