@@ -47,12 +47,18 @@ jobs:
           curl -s -o /tmp/proj.json -w 'HTTP %{http_code}\n' \
             "https://api.vercel.com/v9/projects/${VERCEL_PROJECT_ID}?teamId=${VERCEL_ORG_ID}" \
             -H "Authorization: Bearer $TOKEN"
-          head -c 400 /tmp/proj.json; echo
+          echo "--- GET /v2/user (user-level resource) ---"
+          curl -s -o /tmp/user.json -w 'HTTP %{http_code}\n' \
+            "https://api.vercel.com/v2/user" -H "Authorization: Bearer $TOKEN"
+          head -c 200 /tmp/user.json; echo
+          echo "--- GET /v2/team (team-level resource) ---"
+          curl -s -o /dev/null -w 'HTTP %{http_code}\n' \
+            "https://api.vercel.com/v2/teams/${VERCEL_ORG_ID}" -H "Authorization: Bearer $TOKEN"
 
       - name: Install Vercel CLI
         run: npm install --global vercel@latest
       - name: Pull Vercel environment information
-        run: vercel pull --yes --environment=preview --token=${{ secrets.VERCEL_TOKEN }}
+        run: vercel pull --yes --environment=preview --scope=daniel-bodes-projects --token=${{ secrets.VERCEL_TOKEN }}
       - name: Build project artifacts
         run: vercel build --token=${{ secrets.VERCEL_TOKEN }}
       - name: Deploy preview
