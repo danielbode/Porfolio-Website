@@ -121,7 +121,7 @@ function ContentDE() {
         <address className="not-italic text-gray-700 dark:text-gray-300 leading-relaxed">
           Daniel Bode<br />
           c/o flexdienst – #20532<br />
-          Kurt-Schumacher-Straße 76<br />
+          Kurt-Schumacher-Straße 74<br />
           67663 Kaiserslautern<br />
           Deutschland
         </address>
@@ -159,7 +159,7 @@ function ContentEN() {
         <address className="not-italic text-gray-700 dark:text-gray-300 leading-relaxed">
           Daniel Bode<br />
           c/o flexdienst – #20532<br />
-          Kurt-Schumacher-Straße 76<br />
+          Kurt-Schumacher-Straße 74<br />
           67663 Kaiserslautern<br />
           Germany
         </address>
